@@ -23,7 +23,7 @@ img {
 }
 
 /* screensize: 1440 */
-/* @media only screen and (min-width: 1440px) { */
+@media only screen and (min-width: 375px) {
     /* main body */
     .grids {
         display: flex;
@@ -107,9 +107,10 @@ img {
     .upperRight .mainText  {
         height: 383px;
     }
-/* } */
+}
 
 /* screensize: 375 */
+/* Mein Browser kann nur auf knapp unter 700px, deshalb immer mit 700px geprüft. */
 @media only screen and (max-width: 375px) {
     .grids {
         display: flex;
