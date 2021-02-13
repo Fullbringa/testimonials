@@ -1,8 +1,19 @@
+/* font-import, damit dieser immer heruntergeladen werden kann */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600;700&display=swap');
+
 /* global */
+html {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 13px;
+}
+
 body {
     margin: 0;
     padding: 0;
     color: white;
+    box-sizing: border-box;
+    background-color: hsl(210, 46%, 95%);
+
 }
 
 img {
@@ -11,88 +22,126 @@ img {
     height: 30px;
 }
 
-/* main body */
-.grids {
-    display: flex;
-    margin: 5% 15%;
+/* screensize: 1440 */
+/* @media only screen and (min-width: 1440px) { */
+    /* main body */
+    .grids {
+        display: flex;
+        margin: 5% 15%;
+    }
+
+    .name {
+        display: flex;
+    }
+
+    .name img {
+        margin-right: 15px;
+    }
+
+    .mainText {
+        font-size: 1.2rem;
+        padding-bottom: 10px;
+    }
+
+
+    /* left side */
+    .gridLeft {
+        display: grid;
+        grid-template-columns: repeat(3, 270);
+        grid-template-rows: 320px 320px;
+        grid-gap: 20px;
+    }
+
+    /* grids */
+    .upperLeft {
+        grid-area: 1/1/1/3;
+        background-image: url(../images/bg-pattern-quotation.svg);
+        background-position: top left 80%;
+        background-repeat: no-repeat;
+        background-color: hsl(263, 55%, 52%);
+    }
+
+    .upperMid {
+        grid-area: 1/3/1/4;
+        background-color: hsl(217, 19%, 35%);
+    }
+
+    .bottomLeft {
+        grid-area: 2/1/2/2;
+        background-color: hsl(0, 0%, 100%);
+    }
+
+    .bottomMid {
+        grid-area: 2/2/2/4;
+        background-color: hsl(219, 29%, 14%);
+    }
+
+    .name span {
+        font-weight: 600;
+    }
+
+    .name span .verified {
+        font-size: .85rem;
+        opacity: 50%;
+    }
+
+    .bigHeadline p {
+        font-size: 1.8rem;
+        font-weight: 700;
+    }
+
+    /* right side */
+    .gridRight {
+        display: grid;
+        grid-template-rows: 2fr;
+        margin-left: 15px;
+    }
+
+    .upperRight {
+        grid-area: 1/1/2/2;
+        width: 260px;
+        background-color: hsl(0, 0%, 100%);
+        margin-left: 10px;
+    }
+
+    .upperRight .mainText  {
+        height: 383px;
+    }
+/* } */
+
+/* screensize: 375 */
+@media only screen and (max-width: 375px) {
+    .grids {
+        display: flex;
+        flex-direction: column;
+        width: 330px;
+        
+    }
+
+    .gridLeft {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .gridRight {
+        margin-left: -10px;
+    }
+
+    .upperLeft, .upperMid, .bottomLeft, .bottomMid {
+        margin-bottom: 20px;
+    }
+
 }
-
-.name {
-    display: grid;
-    /* grid-gap: 5px; */
-    grid-template-columns: 20% 80%;
-    grid-template-rows: 1fr;
-}
-
-.name img {
-    grid-area: 1/1/1/2;
-}
-
-.name span {
-    grid-area: 1/2/1/3;
-}
-
-
-/* left side */
-.gridLeft {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 282px 282px;
-    grid-gap: 15px;
-}
-
-/* grids */
-.upperLeft {
-    border: 1px solid blue;
-    grid-area: 1/1/1/3;
-    background-image: url(../images/bg-pattern-quotation.svg);
-    background-position: top left 80%;
-    background-repeat: no-repeat;
-    background-color: hsl(263, 55%, 52%);
-}
-
-.upperMid {
-    border: 1px solid blue;
-    grid-area: 1/3/1/4;
-    background-color: hsl(217, 19%, 35%);
-}
-
-.bottomLeft {
-    border: 1px solid blue;
-    grid-area: 2/1/2/2;
-    background-color: hsl(0, 0%, 100%);
-}
-
-.bottomMid {
-    border: 1px solid blue;
-    grid-area: 2/2/2/4;
-    background-color: hsl(219, 29%, 14%);
-}
-
-/* right side */
-.gridRight {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 2fr;
-    margin-left: 15px;
-}
-
-.upperRight {
-    border: 1px solid blue;
-    grid-area: 1/1/2/2;
-    width: 260px;
-    background-color: hsl(0, 0%, 100%);
-}
-
 /* specials */
 .whiteSpace {
-    padding: 20px;
+    padding: 30px;
 }
 
 .borderRounded {
     border-radius: 10px;
 }
 
-.nonWhiteBackground {
+.whiteBackground {
     color: grey;
 }
